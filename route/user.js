@@ -23,9 +23,11 @@ router.post("/new-user", (req, res) => {
 router.get("/:username", (req, res) => {
   UserInfo.findOne({ username: req.params.username })
     .then((result) => {
-      res.status(200).json({
-        result: result,
-      });
+      //   res.status(200).json({
+      //     result: result,
+      //   });
+
+      res.send(result);
     })
     .catch((err) => {
       console.log(error);
